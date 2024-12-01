@@ -1,0 +1,56 @@
+- name: Deploy Jenkins with Persistent Volume, NodePort Service, and RBAC in Jenkins Namespace
+  hosts: localhost
+  vars:
+    ansible_python_interpreter: "/home/omar/ansible_env/bin/python"
+  tasks:
+    - name: Create Jenkins Namespace
+      k8s:
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: jenkins
+
+    - name: Apply PersistentVolume
+      k8s:
+        state: present
+        definition: "{{ lookup('file', 'jenkins-pv.yml') }}"
+        namespace: jenkins
+
+    - name: Apply PersistentVolumeClaim
+      k8s:
+        state: present
+        definition: "{{ lookup('file', 'jenkins-pvc.yml') }}"
+        namespace: jenkins
+
+    - name: Apply Service Account for Jenkins
+      k8s:
+        state: present
+        definition: "{{ lookup('file', 'jenkins-service-account.yml') }}"
+        namespace: jenkins
+
+    - name: Apply Role for Jenkins
+      k8s:
+        state: present
+        definition: "{{ lookup('file', 'jenkins-role.yml') }}"
+        namespace: jenkins
+
+    - name: Apply RoleBinding for Jenkins
+      k8s:
+        state: present
+        definition: "{{ lookup('file', 'jenkins-rolebinding.yml') }}"
+        namespace: jenkins
+
+    - name: Apply Jenkins Deployment
+      k8s:
+        state: present
+        definition: "{{ lookup('file', 'jenkins-deployment.yml') }}"
+        namespace: jenkins
+
+    - name: Apply Jenkins Service
+      k8s:
+        state: present
+        definition: "{{ lookup('file', 'jenkins-service.yml') }}"
+        namespace: jenkins
+

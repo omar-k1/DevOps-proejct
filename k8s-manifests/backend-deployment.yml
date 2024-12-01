@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: omarz1/finalproject:backend4  # Replace with your private registry image
+          ports:
+            - containerPort: 5000
+      imagePullSecrets:
+        - name: image-pull-auth    # Replace with the name of your secret
+
