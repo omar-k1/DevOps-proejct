@@ -67,7 +67,6 @@ pipeline {
                     kubectl apply -f k8s-manifests/mysql-secret.yml
                     kubectl apply -f k8s-manifests/mysql-pv.yml
                     kubectl apply -f k8s-manifests/mysql-pvc.yml
-                    kubectl apply -f k8s-manifests/mysql-secret.yml
                     kubectl apply -f k8s-manifests/mysql-deployment.yml
                     kubectl apply -f k8s-manifests/mysql-service.yml
                     kubectl apply -f k8s-manifests/frontend-deployment.yml
