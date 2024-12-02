@@ -19,7 +19,7 @@ pipeline {
             parallel {
                 stage('Build & Push Backend') {
                     steps {
-                        dir('backend') {
+                        dir('backend-flask') {
                             sh """
                                 echo "Building Backend Docker Image: $BACKEND_IMAGE"
                                 docker build -t $BACKEND_IMAGE .
@@ -32,7 +32,7 @@ pipeline {
 
                 stage('Build & Push Frontend') {
                     steps {
-                        dir('frontend') {
+                        dir('frontend-html') {
                             sh """
                                 echo "Building Frontend Docker Image: $FRONTEND_IMAGE"
                                 docker build -t $FRONTEND_IMAGE .
