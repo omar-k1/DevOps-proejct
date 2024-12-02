@@ -58,17 +58,18 @@ pipeline {
             steps {
                 echo 'Applying Kubernetes manifests...'
                 sh """
-                    kubectl apply -f k8s-manifests/backend-configmap.yml
-                    kubectl apply -f k8s-manifests/backend-pv.yml
-                    kubectl apply -f k8s-manifests/backend-pvc.yml
-                    kubectl apply -f k8s-manifests/backend-deployment.yml
-                    kubectl apply -f k8s-manifests/backend-service.yml
+                    # Apply MySQL resources first (database)
                     kubectl apply -f k8s-manifests/mysql-configmap.yml
                     kubectl apply -f k8s-manifests/mysql-secret.yml
                     kubectl apply -f k8s-manifests/mysql-pv.yml
                     kubectl apply -f k8s-manifests/mysql-pvc.yml
                     kubectl apply -f k8s-manifests/mysql-deployment.yml
                     kubectl apply -f k8s-manifests/mysql-service.yml
+                    kubectl apply -f k8s-manifests/backend-configmap.yml
+                    kubectl apply -f k8s-manifests/backend-pv.yml
+                    kubectl apply -f k8s-manifests/backend-pvc.yml
+                    kubectl apply -f k8s-manifests/backend-deployment.yml
+                    kubectl apply -f k8s-manifests/backend-service.yml
                     kubectl apply -f k8s-manifests/frontend-deployment.yml
                     kubectl apply -f k8s-manifests/frontend-service.yml
                 """
