@@ -59,19 +59,19 @@ pipeline {
                 echo 'Applying Kubernetes manifests...'
                 sh """
                     # Apply MySQL resources first (database)
-                    kubectl apply -f k8s-manifests/mysql-configmap.yml
-                    kubectl apply -f k8s-manifests/mysql-secret.yml
-                    kubectl apply -f k8s-manifests/mysql-pv.yml
-                    kubectl apply -f k8s-manifests/mysql-pvc.yml
-                    kubectl apply -f k8s-manifests/mysql-deployment.yml
-                    kubectl apply -f k8s-manifests/mysql-service.yml
-                    kubectl apply -f k8s-manifests/backend-configmap.yml
-                    kubectl apply -f k8s-manifests/backend-pv.yml
-                    kubectl apply -f k8s-manifests/backend-pvc.yml
-                    kubectl apply -f k8s-manifests/backend-deployment.yml
-                    kubectl apply -f k8s-manifests/backend-service.yml
-                    kubectl apply -f k8s-manifests/frontend-deployment.yml
-                    kubectl apply -f k8s-manifests/frontend-service.yml
+                    kubectl apply -f k8s-manifests/mysql-configmap.yml -n default
+                    kubectl apply -f k8s-manifests/mysql-secret.yml -n default
+                    kubectl apply -f k8s-manifests/mysql-pv.yml -n default
+                    kubectl apply -f k8s-manifests/mysql-pvc.yml -n default
+                    kubectl apply -f k8s-manifests/mysql-deployment.yml -n default
+                    kubectl apply -f k8s-manifests/mysql-service.yml -n default
+                    kubectl apply -f k8s-manifests/backend-configmap.yml -n default
+                    kubectl apply -f k8s-manifests/backend-pv.yml -n default
+                    kubectl apply -f k8s-manifests/backend-pvc.yml -n default
+                    kubectl apply -f k8s-manifests/backend-deployment.yml -n default
+                    kubectl apply -f k8s-manifests/backend-service.yml -n default
+                    kubectl apply -f k8s-manifests/frontend-deployment.yml -n default
+                    kubectl apply -f k8s-manifests/frontend-service.yml -n default
                 """
             }
         }
