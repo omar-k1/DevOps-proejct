@@ -60,7 +60,7 @@ pipeline {
                 sh """
                     # Apply MySQL resources first (database)
                     kubectl apply -f k8s-manifests/mysql-configmap.yml -n default
-                    kubectl apply -f k8s-manifests/mysql-secret.yml -n default  
+                    kubectl apply -f Sealed-Secrets/my-sealed-secret.yaml -n default  
                     kubectl apply -f k8s-manifests/mysql-pv.yml -n default
                     kubectl apply -f k8s-manifests/mysql-pvc.yml -n default
                     kubectl apply -f k8s-manifests/mysql-deployment.yml -n default
