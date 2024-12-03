@@ -64,7 +64,6 @@ pipeline {
                     kubectl apply -f k8s-manifests/mysql-pv.yml -n default
                     kubectl apply -f k8s-manifests/mysql-pvc.yml -n default
                     kubectl apply -f k8s-manifests/mysql-deployment.yml -n default
-                    kubectl apply -f k8s-manifests/image-pull-auth.yml -n default
                     kubectl apply -f k8s-manifests/mysql-service.yml -n default
                     kubectl apply -f k8s-manifests/backend-configmap.yml -n default
                     kubectl apply -f k8s-manifests/backend-pv.yml -n default
