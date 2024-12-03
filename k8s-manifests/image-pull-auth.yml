@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: image-pull-auth
-  namespace: default
-type: kubernetes.io/dockerconfigjson
-data:
-  .dockerconfigjson: eyJhdXRocyI6eyJkb2NrZXIuaW8iOnsidXNlcm5hbWUiOiJvbWFyejEiLCJwYXNzd29yZCI6Im9rMjAyMTA1OTkiLCJlbWFpbCI6Im9rNTUzNjQ0MUBnbWFpbC5jb20iLCJhdXRoIjoiYkdWc2JHRnNiQzF2Y21VPSJ9fX0=
-
