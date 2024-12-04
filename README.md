@@ -11,4 +11,6 @@ This project implements a robust three-tier application architecture, deployed w
 
 - **Install KinD**: Follow the official KinD installation guide to set up KinD on your system.
 - **Create a KinD Cluster**: Once KinD is installed, create a Kubernetes cluster with the following comman
-  kind create cluster --name devops-cluster
+      ```bash
+    kind create cluster --name devops-cluster
+    ```
