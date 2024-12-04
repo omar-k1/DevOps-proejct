@@ -72,6 +72,9 @@ pipeline {
                     kubectl apply -f k8s-manifests/backend-service.yml -n default
                     kubectl apply -f k8s-manifests/frontend-deployment.yml -n default
                     kubectl apply -f k8s-manifests/frontend-service.yml -n default
+                    kubectl apply -f k8s-manifests/ingress.yml -n default
+
+                    
                 """
             }
         }
