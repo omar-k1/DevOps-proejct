@@ -11,5 +11,6 @@ Environment Setup
 
 To begin, we establish a local Kubernetes environment using KinD (Kubernetes in Docker). KinD is an excellent tool for setting up Kubernetes clusters locally for development and testing, offering a lightweight solution for Kubernetes experimentation.
 
-    - **Install KinD**: Follow the official KinD installation guide to set up KinD on your system.
-    - **Create a KinD Cluster**: Once KinD is installed, create a Kubernetes cluster with the following command (kind create cluster --name devops-cluster)
+    + **Install KinD**: Follow the official KinD installation guide to set up KinD on your system.
+    + **Create a KinD Cluster**: Once KinD is installed, create a Kubernetes cluster with the following command 
+    - (kind create cluster --name devops-cluster)
